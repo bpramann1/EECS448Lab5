@@ -1,12 +1,31 @@
 <html>
 <head>
+    <link href="MyCustomStyle.css" rel="stylesheet" type="text/css" />
     <title>Create Post</title>
 </head>
 <body>
-
+    <header>
+        <div id="SmallContainer">
+            <div class="Navbar">
+                <h1 id="NavExp">Pages</h1>
+            </div>
+            <div class="Navbar">
+                <a href="https://people.eecs.ku.edu/~b122p496/subdir/eecs448/Lab05/UserHome.html">User Home</a>
+            </div>
+            <div class="Navbar">
+                <a href="https://people.eecs.ku.edu/~b122p496/subdir/eecs448/Lab05/CreateUser.html">Create User</a>
+            </div>
+        </div>
+    </header>
     <form action="CreatePosts.php" method="post">
         Username: <input type="text" name="username" id="username"><br>
+        Message: <input type="text" name="message" id="message"><br>
         <input type="submit">
     </form>
+    <footer>
+        <p>
+            Created by Brandon Pramann 2019.
+        </p>
+    </footer>
 </body>
 </html>
