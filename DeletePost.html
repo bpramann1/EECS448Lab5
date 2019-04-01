@@ -1,0 +1,62 @@
+<html>
+<head>
+    <link href="MyCustomStyle.css" rel="stylesheet" type="text/css" />
+    <title>View Posts By User</title>
+</head>
+<body>
+    <header>
+        <div class="Container">
+            <div class="Navbar">
+                <h1 id="NavExp">Pages</h1>
+            </div>
+            <div class="Navbar">
+                <a href="https://people.eecs.ku.edu/~b122p496/subdir/eecs448/Lab05/AdminHome.html">Admin Home</a>
+            </div>
+            <div class="Navbar">
+                <a href="https://people.eecs.ku.edu/~b122p496/subdir/eecs448/Lab05/ViewUsers.php">View users</a>
+            </div>
+            <div class="Navbar">
+                <a href="https://people.eecs.ku.edu/~b122p496/subdir/eecs448/Lab05/ViewUserPosts.html">View posts by user</a>
+            </div>
+        </div>
+    </header>
+    <form action="DeletePost.php" method="post">
+        <table>
+            <?php
+            $myDatabaseClass = new mysqli("mysql.eecs.ku.edu", "b122p496", "yae9Kei3", "b122p496");
+
+            /* check connection */
+            if ($myDatabaseClass->connect_error) {
+            printf("Connect failed: %s\n", $myDatabaseClass->connect_error);
+            exit();
+            }
+
+            $query = "select * from Posts;";
+
+            if ($result = $myDatabaseClass->query($query)) {
+
+            /* fetch associative array */
+            echo "
+            <tr><td>Post Content</td><td>Author</td><td>Delete?</td></tr>";
+            while ($row = $result->fetch_assoc()) {
+            echo "
+            <tr><td>" . $row[content] . "</td><td>" . $row[author_id] . "</td><td><input type=\"checkbox\" name=\"Posts[]\" value=\"" . $row[post_id] . "\"></td></tr>";
+            }
+
+            /* free result set */
+            $result->free();
+            }
+
+            /* close connection */
+            $myDatabaseClass->close();
+            ?>
+        </table>
+        <input type="submit">
+    </form>
+    <footer>
+        <p>
+            Created by Brandon Pramann 2019.
+        </p>
+    </footer>
+</body>
+</html>
