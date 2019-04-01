@@ -1,0 +1,68 @@
+header, footer
+{
+	border-width: 5px;
+	border-style: solid;
+	background-color: black;
+	left: 0px; 
+	right: 0px
+}
+a
+{
+	display: block;
+	font-size: 30px;
+	text-decoration: none;
+	color: white;
+	margin-top: 0.67em;
+	margin-bottom: 0.67em;
+	margin-left: 0;
+	margin-right: 0;
+
+}
+a:hover
+{
+	color: gray;
+}
+html, body
+{
+	background-color: gray;
+	margin: 0;
+}
+p, h1
+{
+	color: white;
+}
+table{
+    border:solid;
+}
+td{
+    border:solid;
+    margin:0px;
+    background-color: deepskyblue;
+    padding:0px;
+    border:0px;
+}
+#NavExp
+{
+	color: Orange;
+}
+footer
+{
+	position: absolute;
+	bottom:0;
+}
+.Navbar
+{
+
+}
+.Container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+#BigContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+#SmallContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
